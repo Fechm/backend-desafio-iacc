@@ -67,25 +67,25 @@ A continuación se detallan los endpoints disponibles en esta API.
 
 ## GET
 **Estudiantes**
-`LISTAR TODOS` [/estudiantes](#get-estudiantes) 
-`LISTAR POR ID` [/estudiantes/`{id}`](#get-estudiantes-id) 
+`LISTAR TODOS` [/estudiantes](#get-estudiantes) <br>
+`LISTAR POR ID` [/estudiantes/`{id}`](#get-estudiantesid) <br>
 
 **Cursos**
-`LISTAR TODOS` [/cursos](#get-cursos) 
-`LISTAR POR ID` [/cursos/`{id}`](#get-cursos-id) 
+`LISTAR TODOS` [/cursos](#get-cursos) <br>
+`LISTAR POR ID` [/cursos/`{id}`](#get-cursosid) <br>
 ## POST
 **Estudiantes**
-`CREAR ESTUDIANTE` [/estudiantes](#post-estudiantes) 
-`ASIGNAR CURSO A ESTUDIANTE` [/estudiantes/`{idEstudiante}`/cursos/`{idCurso}`](#post-estudiantes-idestudiante-cursos-idcurso)
+`CREAR ESTUDIANTE` [/estudiantes](#post-estudiantes) <br>
+`ASIGNAR CURSO A ESTUDIANTE` [/estudiantes/`{idEstudiante}`/cursos/`{idCurso}`](#post-estudiantesidestudiantecursosidcurso) <br>
 
 **Cursos**
-`CREAR CURSO` [/cursos](#post-cursos)
+`CREAR CURSO` [/cursos](#post-cursos) <br>
 ## PATCH
 **Estudiantes**
-`ACTUALIZAR` [/estudiantes/`{id}`](#patch-estudiantes-id) 
+`ACTUALIZAR` [/estudiantes/`{id}`](#patch-estudiantesid) <br>
 
 **Cursos**
-`ACTUALIZAR` [/cursos/`{id}`](#patch-estudiantes-id) 
+`ACTUALIZAR` [/cursos/`{id}`](#patch-estudiantesid) <br>
 ___
 
 ### GET /estudiantes
