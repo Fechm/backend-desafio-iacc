@@ -544,3 +544,13 @@ curl -X PATCH http://localhost:3000/estudiantes/70426d41-1f75-4653-b264-0a8a30dc
 ```bash
 curl -X PATCH http://localhost:3000/cursos/308d4c81-7912-477a-8df7-59fe02f43ef8 -H 'Content-Type: application/json' -d '{"name":"Computación I"}'
 ```
+
+**DELETE Estudiante**
+```bash
+curl -X DELETE http://localhost:3000/estudiantes/70426d41-1f75-4653-b264-0a8a30dc21fb -H 'Content-Type: application/json'
+```
+
+**DELETE Curso**
+```bash
+curl -X DELETE http://localhost:3000/cursos/29174b84-0ece-4b05-bf6b-ae9fa58c62df -H 'Content-Type: application/json'
+```
