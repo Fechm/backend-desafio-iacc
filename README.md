@@ -61,6 +61,13 @@ npm run build
 ```
 Este comando generará una carpeta dist que contiene los archivos compilados de la aplicación.
 
+## Artillery
+
+la ruta del archivo asciiart-load-test.yml es la siguiente
+```bash
+artillery\asciiart-load-test.yml
+```
+
 # API endpoints
 
 A continuación se detallan los endpoints disponibles en esta API.
