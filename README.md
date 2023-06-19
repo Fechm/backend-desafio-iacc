@@ -68,6 +68,9 @@ la ruta del archivo asciiart-load-test.yml es la siguiente
 artillery\asciiart-load-test.yml
 ```
 
+**Resultado** <br>
+
+
 # API endpoints
 
 A continuación se detallan los endpoints disponibles en esta API.
@@ -92,8 +95,14 @@ A continuación se detallan los endpoints disponibles en esta API.
 `ACTUALIZAR` [/estudiantes/`{id}`](#patch-estudiantesid) <br>
 
 **Cursos** <br>
-`ACTUALIZAR` [/cursos/`{id}`](#patch-estudiantesid) <br>
-___
+`ACTUALIZAR` [/cursos/`{id}`](#patch-cursosid) <br>
+
+## DELETE
+**Estudiantes** <br>
+`ELIMINAR` [/estudiantes/`{id}`](#delete-estudiantesid) <br>
+
+**Cursos** <br>
+`ELIMINAR` [/cursos/`{id}`](#delete-cursosid) <br>
 
 ### GET /estudiantes
 Devuelve una lista de todos los estudiantes registrados en el sistema.
@@ -465,6 +474,33 @@ Modifica uno o multipes campos de un `curso` previamente registrado en la BD. De
 {
 	"statusCode": 400,
 	"message": "BAD_REQUEST :: No se pudo actualizar"
+}
+```
+### DELETE /estudiantes/`{id}`
+Elimina un estudiante del sistema. Debes enviar por URL en `{id}` el id del estudiante que quieres eliminar.
+
+**Response**
+
+```
+//Success output
+//id: c8e85173-5709-467f-aba9-f3f3bab5dd3a
+{
+	"raw": [],
+	"affected": 1
+}
+```
+
+### DELETE /cursos/`{id}`
+Elimina un curso del sistema. Debes enviar por URL en `{id}` el id del curso que quieres eliminar.
+
+**Response**
+
+```
+//Success output
+//id: 29174b84-0ece-4b05-bf6b-ae9fa58c62df
+{
+	"raw": [],
+	"affected": 1
 }
 ```
 
