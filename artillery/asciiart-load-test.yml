@@ -1,0 +1,26 @@
+config:
+  target: "http://localhost:3000"
+
+scenarios:
+  - name: "Estresar endpoint GET de estudiantes"
+    flow:
+      - think: 5000
+      - loop:
+          - post:
+              url: "/estudiantes"
+              json:
+                firstname: "Usuario firstname"
+                lastname: "Usuario lastname"
+                email: "{{ $loopCount }}@email.com"
+                age: "20"
+                address: "dirección ficticia"
+          - think: 5000
+          - get:
+              url: "/estudiantes"
+    phases:
+      - duration: 15
+        arrivalRate: 0.2
+        name: "Preparación"
+      - duration: 30
+        arrivalRate: 0.67
+        name: "Stress"
