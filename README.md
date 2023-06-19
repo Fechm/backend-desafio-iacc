@@ -66,25 +66,25 @@ Este comando generará una carpeta dist que contiene los archivos compilados de 
 A continuación se detallan los endpoints disponibles en esta API.
 
 ## GET
-**Estudiantes**
+**Estudiantes** <br>
 `LISTAR TODOS` [/estudiantes](#get-estudiantes) <br>
 `LISTAR POR ID` [/estudiantes/`{id}`](#get-estudiantesid) <br>
 
-**Cursos**
+**Cursos** <br>
 `LISTAR TODOS` [/cursos](#get-cursos) <br>
 `LISTAR POR ID` [/cursos/`{id}`](#get-cursosid) <br>
 ## POST
-**Estudiantes**
+**Estudiantes** <br>
 `CREAR ESTUDIANTE` [/estudiantes](#post-estudiantes) <br>
 `ASIGNAR CURSO A ESTUDIANTE` [/estudiantes/`{idEstudiante}`/cursos/`{idCurso}`](#post-estudiantesidestudiantecursosidcurso) <br>
 
-**Cursos**
+**Cursos** <br>
 `CREAR CURSO` [/cursos](#post-cursos) <br>
 ## PATCH
-**Estudiantes**
+**Estudiantes** <br>
 `ACTUALIZAR` [/estudiantes/`{id}`](#patch-estudiantesid) <br>
 
-**Cursos**
+**Cursos** <br>
 `ACTUALIZAR` [/cursos/`{id}`](#patch-estudiantesid) <br>
 ___
 
