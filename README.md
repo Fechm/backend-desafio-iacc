@@ -460,3 +460,44 @@ Modifica uno o multipes campos de un `curso` previamente registrado en la BD. De
 	"message": "BAD_REQUEST :: No se pudo actualizar"
 }
 ```
+
+# Comandos Curl
+
+A continuación se detallan los comandos curl utilizados para testear los endpoints disponibles en esta API.
+
+**GET Estudiantes**
+```bash
+curl -X GET http://localhost:3000/estudiantes -H 'Content-Type: application/json'
+
+curl -X GET http://localhost:3000/estudiantes/bd60910d-6c9c-420d-bfeb-9400091b5fc6 -H 'Content-Type: application/json'
+```
+
+**GET Cursos**
+```bash
+curl -X GET http://localhost:3000/cursos -H 'Content-Type: application/json'
+
+curl -X GET http://localhost:3000/cursos/5fab22fc-9351-4c4e-8e97-109d48433908 -H 'Content-Type: application/json'
+```
+
+**POST Estudiantes**
+```bash
+curl -X POST http://localhost:3000/estudiantes -H 'Content-Type: application/json' -d '{"firstname":"Juan","lastname":"Martinez","email":"mail@mail.com","age":"20","address":"los volcanes 4"}'
+```
+**POST Asignación Estudiante a curso**
+```bash
+curl -X POST http://localhost:3000/estudiantes/e50d7a76-614a-4763-b1d8-f8f9185d9cfa/cursos/5fab22fc-9351-4c4e-8e97-109d48433908 -H 'Content-Type: application/json'
+```
+**POST Crear Curso**
+```bash
+curl -X POST http://localhost:3000/cursos -H 'Content-Type: application/json' -d '{"name":"Computación","code":"0000006","year":2023,"semester":1,"campus":"Fdo. May"}'
+```
+
+**UPDATE Estudiante**
+```bash
+curl -X PATCH http://localhost:3000/estudiantes/70426d41-1f75-4653-b264-0a8a30dc21fb -H 'Content-Type: application/json' -d '{"firstname":"Marcelo"}'
+```
+
+**UPDATE Curso**
+```bash
+curl -X PATCH http://localhost:3000/cursos/308d4c81-7912-477a-8df7-59fe02f43ef8 -H 'Content-Type: application/json' -d '{"name":"Computación I"}'
+```
