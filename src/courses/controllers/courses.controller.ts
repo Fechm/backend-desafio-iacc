@@ -28,6 +28,15 @@ export class CoursesController {
     return this.coursesService.findCourseById(id);
   }
 
+  @ApiResponse({
+    status: 400,
+    description: 'No se encontro resultado'
+  })
+  @Get(':id/estudiantes')
+  findAllStudents(@Param('id') id: string) {
+    return this.coursesService.findAllStudentsByIdCourse(id);
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCourseDto: UpdateCourseDto) {
     return this.coursesService.updateCourse(id, updateCourseDto);

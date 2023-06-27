@@ -5,11 +5,15 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { ErrorManager } from 'src/utils/error.manager';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import { CourseEntity } from '../entities/course.entity';
+import { StudentEntity } from '../../students/entities/student.entity';
+import { StudentsCoursesEntity } from '../../students/entities/studentsCourses.entity';
 
 @Injectable()
 export class CoursesService {
 
-  constructor(@InjectRepository(CourseEntity) private courseRepo: Repository<CourseEntity>) { }
+  constructor(
+    @InjectRepository(CourseEntity) private courseRepo: Repository<CourseEntity>,
+    @InjectRepository(StudentsCoursesEntity) private studentCourseRepo: Repository<StudentsCoursesEntity>,) { }
 
   async createCourse(createCourseDto: CreateCourseDto): Promise<CourseEntity> {
     try {
@@ -47,6 +51,26 @@ export class CoursesService {
         });
       }
       return course;
+    } catch (error) {
+      throw ErrorManager.createSignatureError(error.message);
+    }
+  }
+
+  async findAllStudentsByIdCourse(idCourse: string): Promise<StudentEntity[]> {
+    try {
+      const studentsCourses: StudentsCoursesEntity[] = await this.studentCourseRepo
+        .createQueryBuilder('estudiantes_cursos')
+        .innerJoinAndSelect('estudiantes_cursos.student', 'student')
+        .where('estudiantes_cursos.course_id = :courseId', { courseId: idCourse })
+        .getMany();
+
+      if (studentsCourses.length === 0) {
+        throw new ErrorManager({
+          type: 'BAD_REQUEST',
+          message: 'No se encontro resultado',
+        });
+      }
+      return studentsCourses.map((studentCourse) => studentCourse.student);
     } catch (error) {
       throw ErrorManager.createSignatureError(error.message);
     }
