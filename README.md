@@ -18,7 +18,7 @@ Sigue estos pasos para instalar y configurar la aplicación:
 1. Clona este repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/tu-usuario/nestjs-app.git
+git clone https://github.com/Fechm/backend-desafio-iacc.git
 ```
 2. Navega hasta el directorio del proyecto:
 ```bash
